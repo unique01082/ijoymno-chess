@@ -1,13 +1,13 @@
 export default Object.freeze({
   SPIRIT: Symbol("Khí linh"),
-  UNDERWORLD: Symbol("Underworld"),
+  UNDERWORLD: Symbol("Âm ti"),
   GOD: Symbol("Thần minh"),
   DEVIL: Symbol("Đại yêu"),
   WARRIOR: Symbol("Võ sĩ"),
-  BEAST: Symbol("Beast"),
-  FOREST: Symbol("Forest"),
+  BEAST: Symbol("Quái thú"),
+  FOREST: Symbol("Rừng xanh"),
   NATURE: Symbol("Tự nhiên"),
-  HARPY: Symbol("Harpy"),
+  HARPY: Symbol("Người chim"),
   EVIL: Symbol("Ác quỷ"),
-  ZOMBIE: Symbol("Zombie")
+  ZOMBIE: Symbol("Xác sống"),
 });

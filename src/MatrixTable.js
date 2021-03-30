@@ -9,8 +9,10 @@ const MatrixTable = ({
   rowKey,
   columnKey,
   renderItem,
+  align,
   ...restProps
 }) => {
+  console.log("dataSource :>> ", dataSource);
   const mixedDataSource = useCreation(
     () =>
       rows.map((row) =>
@@ -37,6 +39,7 @@ const MatrixTable = ({
           dataIndex: "_row",
           key: "_row",
           render: (_row) => _row.title,
+          align,
         },
       ].concat(
         columns.map((column) => ({
