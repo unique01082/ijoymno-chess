@@ -8,6 +8,7 @@ import COLORS from "./constants/colors";
 import DATA from "./constants/shikigami-data";
 import { useCreation, useUpdate } from "ahooks";
 import { Badge, Card } from "antd";
+import Matrix from "./matrix";
 
 const Grid = () => {
   const state = useCreation(() => cloneDeep(DATA), []);
@@ -37,26 +38,51 @@ const Grid = () => {
   }));
 
   return (
-    <MatrixTable
-      rows={rows}
-      columns={columns}
-      dataSource={state}
-      rowKey="role"
-      columnKey="class"
-      renderItem={(shikigami) => (
-        <Shikigami
-          shikigami={shikigami}
-          onClick={() => {
-            shikigami.level = ((shikigami.level ?? 0) + 1) % 4;
-            update();
-          }}
-        />
-      )}
-      pagination={false}
-      size="small"
-      bordered
-      align="center"
-    />
+    <div
+      style={{
+        height: "100vh",
+        backgroundImage: "url(bg2.jpg)",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      <Matrix
+        rows={rows}
+        columns={columns}
+        dataSource={state}
+        rowKey="role"
+        columnKey="class"
+        renderItem={(shikigami) => (
+          <Shikigami
+            shikigami={shikigami}
+            onClick={() => {
+              shikigami.level = ((shikigami.level ?? 0) + 1) % 4;
+              update();
+            }}
+          />
+        )}
+      />
+      {/* <MatrixTable
+        rows={rows}
+        columns={columns}
+        dataSource={state}
+        rowKey="role"
+        columnKey="class"
+        renderItem={(shikigami) => (
+          <Shikigami
+            shikigami={shikigami}
+            onClick={() => {
+              shikigami.level = ((shikigami.level ?? 0) + 1) % 4;
+              update();
+            }}
+          />
+        )}
+        pagination={false}
+        size="small"
+        bordered
+        align="center"
+      /> */}
+    </div>
   );
 };
 
