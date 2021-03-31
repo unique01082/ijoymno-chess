@@ -11,6 +11,7 @@ const Matrix = ({
   rowKey,
   columnKey,
   renderItem,
+  renderCell,
 }) => {
   const mixedDataSource = useCreation(
     () =>
@@ -41,7 +42,7 @@ const Matrix = ({
         },
       ].concat(
         columns.map((column) => ({
-          title: column.title,
+          ...column,
           dataIndex: column.value,
           key: column.value.description,
           render: (arr) => (
@@ -76,9 +77,12 @@ const Matrix = ({
               column.dataIndex === ROWKEY ? (
                 <td className="th">{row[column.dataIndex].title}</td>
               ) : (
-                <td style={{ display: "flex", justifyContent: "space-around" }}>
-                  {row[column.dataIndex]?.map(renderItem)}
-                </td>
+                renderCell(
+                  row[column.dataIndex]?.map(renderItem),
+                  row[column.dataIndex],
+                  row[ROWKEY],
+                  column
+                )
               )
             )}
           </tr>
