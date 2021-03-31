@@ -1,6 +1,6 @@
 import React from "react";
 import Avatar from "antd/lib/avatar/avatar";
-import { Progress } from "antd";
+import { Image, Progress } from "antd";
 import QUALITY_COLORS from "./constants/quality-colors";
 
 const Shikigami = ({ shikigami, onClick }) => {
@@ -9,17 +9,28 @@ const Shikigami = ({ shikigami, onClick }) => {
       type="circle"
       percent={(shikigami.level ?? 0) * 33.33334}
       width={80}
-      format={() => <Avatar size={64} src={shikigami.avatar} />}
+      format={() => (
+        <Avatar
+          size={70}
+          src={
+            <img
+              alt=""
+              src={shikigami.avatar}
+              style={{
+                filter: shikigami.level ? "unset" : "grayscale(100%)",
+              }}
+            />
+          }
+          style={{
+            border: `2px solid ${QUALITY_COLORS[shikigami.quality]}`,
+          }}
+        />
+      )}
       onClick={onClick}
       status="active"
-      trailColor={QUALITY_COLORS[shikigami.quality]}
-      strokeColor={{
-        "0%": "#f00a",
-        "50%": "#0f0c",
-        "100%": "#00ff",
-      }}
-      style={{ margin: 4 }}
-      strokeWidth={8}
+      trailColor="#0000"
+      strokeColor="#f008"
+      strokeWidth={10}
     />
   );
 };

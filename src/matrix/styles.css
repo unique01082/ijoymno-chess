@@ -26,6 +26,7 @@ td {
 th,
 .th {
   text-align: center;
+  background-color: #fff5;
 }
 
 th:last-child {
@@ -36,7 +37,7 @@ td {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
+/* 
 tr:nth-child(even) td {
-  background: #f8f6ff33;
-}
+  background-color: #fff0;
+} */

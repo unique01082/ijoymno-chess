@@ -34,7 +34,7 @@ const Matrix = ({
     () =>
       [
         {
-          title: "abc",
+          title: "v0.0.1",
           dataIndex: ROWKEY,
           key: ROWKEY,
           render: (cell) => cell.title,
@@ -74,7 +74,7 @@ const Matrix = ({
           <tr>
             {localColumns.map((column) =>
               column.dataIndex === ROWKEY ? (
-                <td>{row[column.dataIndex].title}</td>
+                <td className="th">{row[column.dataIndex].title}</td>
               ) : (
                 <td style={{ display: "flex", justifyContent: "space-around" }}>
                   {row[column.dataIndex]?.map(renderItem)}

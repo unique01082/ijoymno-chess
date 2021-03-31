@@ -7,7 +7,7 @@ export default Object.freeze({
   BEAST: Symbol("Quái thú"),
   FOREST: Symbol("Rừng xanh"),
   NATURE: Symbol("Tự nhiên"),
-  HARPY: Symbol("Người chim"),
+  HARPY: Symbol("Harpy"),
   EVIL: Symbol("Ác quỷ"),
   ZOMBIE: Symbol("Xác sống"),
 });
