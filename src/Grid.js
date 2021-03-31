@@ -95,7 +95,7 @@ const Grid = () => {
         dataSource={state}
         rowKey="role"
         columnKey="class"
-        renderItem={(shikigami) => (
+        renderItem={(shikigami, row, column) => (
           <Shikigami
             shikigami={shikigami}
             onClick={() => {
@@ -104,6 +104,27 @@ const Grid = () => {
             }}
           />
         )}
+        renderCell={(children, item, row, column) => {
+          const hasShikigamiSelected = !!(row.count || column.count);
+          const hasShikigami = !!item.find((i) => i.level);
+
+          return (
+            <td
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                border: hasShikigamiSelected ? "1px solid #fff3" : undefined,
+                backgroundColor: hasShikigamiSelected
+                  ? hasShikigami
+                    ? "#f888"
+                    : "#fff4"
+                  : undefined,
+              }}
+            >
+              {children}
+            </td>
+          );
+        }}
       />
     </div>
   );
