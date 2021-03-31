@@ -1,6 +1,6 @@
 import React from "react";
 import Avatar from "antd/lib/avatar/avatar";
-import { Image, Progress } from "antd";
+import { Progress } from "antd";
 import QUALITY_COLORS from "./constants/quality-colors";
 
 const Shikigami = ({ shikigami, onClick }) => {
