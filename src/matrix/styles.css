@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+table {
+  display: grid;
+  border-collapse: collapse;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+thead,
+tbody,
+tr {
+  display: contents;
+}
+
+th,
+td {
+  padding: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+th,
+.th {
+  text-align: center;
+  background-color: #fff5;
+}
+
+th:last-child {
+  border: 0;
+}
+
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* 
+tr:nth-child(even) td {
+  background-color: #fff0;
+} */

@@ -1,9 +1,9 @@
 export default Object.freeze({
   NINJA: Symbol("Ninja"),
-  MAGE: Symbol("Mage"),
   SAMURAI: Symbol("Samurai"),
-  MASKMAN: Symbol("Maskman"),
-  TANK: Symbol("Tank"),
-  SUPPORT: Symbol("Support"),
-  WITCHER: Symbol("Witcher")
+  MAGE: Symbol("Pháp sư"),
+  MASKMAN: Symbol("Xạ thủ"),
+  TANK: Symbol("Đỡ đòn"),
+  SUPPORT: Symbol("Hỗ trợ"),
+  WITCHER: Symbol("Thuật"),
 });
